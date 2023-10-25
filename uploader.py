@@ -1,6 +1,8 @@
 import os
+import random
 import schedule
 import time
+import emoji
 from tiktok_uploader.upload import upload_video
 
 # Path to the directory containing the clipped videos
@@ -28,8 +30,23 @@ def post_video():
 
         print(f"Found video to post: {video_to_post}")
 
+        # Create a caption
+
+        # Read hashtags from tags.txt
+        with open("tags.txt", "r") as file:
+            hashtags_list = [line.strip() for line in file.readlines()]
+
+        # Select 5 random hashtags if there are 5 or more hashtags available
+        if len(hashtags_list) >= 5:
+            random_tags = " ".join(random.sample(hashtags_list, 5))
+        else:
+            # Use all available hashtags if there are fewer than 5
+            random_tags = " ".join(hashtags_list)
+
+        caption = f"#fyp {random_tags}"
+
         # Upload the video to TikTok
-        upload_video(video_to_post, description="#fyp", cookies="cookies.txt", comment=True, stitch=True, duet=True)
+        upload_video(video_to_post, description=caption, cookies="cookies.txt", comment=True, stitch=True, duet=True)
         print(f"Posted video: {video_to_post}")
 
         # Move the posted video file to the posted_videos folder

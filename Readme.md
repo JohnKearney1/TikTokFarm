@@ -11,6 +11,17 @@ cd TikTokFarm
 pip install -r requirements.txt
 ```
 
+Ensure you have installed Google Chrome on your computer.
+The script will spawn a headless browser to upload videos.
+
+The uploader requires your credentials to function, but uses a saved browser cookie
+in place of plaintext username and password. Here's how to get your cookie:
+
+1. Install the [Get cookies.txt](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
+extension.
+2. Go to TikTok.com and login to the account the bot will use.
+3. Use the extension to Export As `cookies.txt` to the root folder of this project (TikTokFarm/cookies.txt)
+
 ## Usage
 
 There are two python files you will use in tandem. 
