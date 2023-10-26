@@ -1,4 +1,5 @@
 # TikTokFarm
+![](readmelogo.png)
 
 This is a basic python script that helps automate the downloading, segmentation,
 and cross-posting of YouTube videos to TikTok accounts. 
@@ -53,3 +54,7 @@ on a given schedule, set to every 30 minutes by default.
 ```commandline
 python uploader.py
 ```
+
+
+### tags.txt
+The tags.txt file contains a list of tags that are pulled from when randomly selecting tags for a video. To add your own tags, just add them to the tags.txt file on a new line. Some example tags are provided for you.

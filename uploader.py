@@ -2,7 +2,6 @@ import os
 import random
 import schedule
 import time
-import emoji
 from tiktok_uploader.upload import upload_video
 
 # Path to the directory containing the clipped videos
